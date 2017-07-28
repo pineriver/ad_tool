@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>
+    Create Ads
+</h1>
+
+<form role="form" method="POST">
+    <div class="form-group">
+        <label for="title">Ad Account</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Ad account" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Page</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Choose a page" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Ad name</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Name your ad" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Bid</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter your bid amount" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Targeting</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Select your targeting" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Start time</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Select the time you want your ad to start" required>
+    </div>
+    <div class="form-group">
+        <label for="title">End time</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Select the time you want your ad to end" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Url</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter the URL for your ad" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter the title for your ad" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Title 2</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter a second title for your ad" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Body</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter the description for your ad" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Body 2</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter another description for your ad" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Image 1</label>
+        <label class="custom-file">
+        <input type="file" id="file" class="custom-file-input">
+         <span class="custom-file-control"></span>
+        </label>
+    </div>
+    
+    <div class="form-group">
+        <label for="title">Image 2</label>
+        <label class="custom-file">
+        <input type="file" id="file" class="custom-file-input">
+        <span class="custom-file-control"></span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="title">Image 3</label>
+        <label class="custom-file">
+        <input type="file" id="file" class="custom-file-input">
+         <span class="custom-file-control"></span>
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-default">Create ads</button>
+</form>
+{% endblock %}
