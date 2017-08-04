@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1> Welcome {{ user.name }} </h1>
+
+<p> You can customize your ads <a href="{{ url_for('ad_form') }}"><b>here</b></a> </p>
+
+<p><i>press here to <a href="{{ url_for('logout_get') }}"><b>logout</b></a></i><p>
+{% endblock %}
