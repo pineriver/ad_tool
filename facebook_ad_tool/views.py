@@ -1,26 +1,37 @@
 from flask import render_template
-
+from flask import flash
+from flask_login import login_user, login_required, current_user, logout_user
+from werkzeug.security import check_password_hash
+from .database import User, session
+from flask import request, redirect, url_for
 from . import app
 
 @app.route("/")
 def home():
     return render_template("base.html")
-    
+
+@login_required
 @app.route("/ad-form")
 def ad_form():
     return render_template("ad_form.html")
     
-    
 @app.route("/login", methods=["GET"])
 def login_get():
-    return render_template("login.html")
-    
+    if current_user.is_authenticated:
+        return redirect(url_for('logged_in'), code=302)
+    else:
+        return render_template('login.html')
 
-from flask import flash
-from flask_login import login_user
-from werkzeug.security import check_password_hash
-from .database import User, session
-from flask import request, redirect, url_for
+@login_required
+@app.route("/loggedin", methods=["GET"])
+def logged_in():
+    return render_template("loggedin.html", user=current_user)
+
+@login_required
+@app.route("/logout", methods=["GET"])
+def logout_get():
+    logout_user()
+    return redirect(url_for('login_get'), code=302)
 
 @app.route("/login", methods=["POST"])
 def login_post():
@@ -32,4 +43,4 @@ def login_post():
         return redirect(url_for("login_get"))
     
     login_user(user)
-    return redirect(request.args.get('next') or url_for("entries"))
+    return redirect(request.args.get('next') or url_for("login_get"))
