@@ -28,6 +28,7 @@ class Facebook(Base):
    __tablename__ = "facebook_ad"
    
    id = Column(Integer, primary_key=True)
+   adtool_user_id = Column(Integer, ForeignKey('users.id'))
    ad_account = Column(String)
    page = Column(Integer)
    ad_name = Column(String(400))
